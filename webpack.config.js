@@ -6,7 +6,13 @@ module.exports = {
 		main: './src/app.js',
 	},
 	output: {
-		fileName: '[name].js',
+		filename: '[name].js',
 		path: path.resolve('./dist'),
 	},
+	module: {
+		rules: [{
+			test: /\.js$/,
+			use: [path.resolve('./src/myloader.js')]
+		}],
+	}
 }
